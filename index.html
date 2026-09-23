@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aprende Unity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav" id="topnav" aria-label="Principal">
+  <div class="topnav-items">
+    <button class="navlink" data-go="home" id="nav-proyectos">Proyectos</button>
+    <span class="navsep" aria-hidden="true"></span>
+    <button class="navlink" data-go="progreso" id="nav-progreso">Progreso</button>
+    <span class="navsep" aria-hidden="true"></span>
+    <button class="navlink" data-foro="1" id="nav-foro">Foro</button>
+  </div>
+  <div class="nav-auth">
+    <button class="pill" id="btn-login-top" data-go="login">Inicia sesión</button>
+    <button class="userchip" id="chip-user" data-go="perfil" hidden>
+      <span class="avatar" aria-hidden="true"></span>
+      <span class="uname" id="chip-name">Usuario276</span>
+      <span class="caret" aria-hidden="true">▶</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <section class="screen" id="s-landing">
+    <div class="hero">
+      <div class="hero-center">
+        <h1>Aprende Unity</h1>
+        <button class="pill pill-lg" data-go="registro">Regístrate</button>
+      </div>
+      <button class="scrolldown" id="scrolldown" aria-label="Ver el foro"></button>
+    </div>
+
+    <div class="foro-home" id="foro">
+      <div class="wrap">
+        <h2 class="foro-title">FORO</h2>
+        <div class="foro-layout">
+          <div class="cats" id="cats"></div>
+          <div class="threads-col">
+            <h3 class="thread-head" id="thread-head">Arte</h3>
+            <div id="threads"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="s-home" hidden>
+    <div class="banner">
+      <div class="banner-inner">
+        <h2>BIENVENIDO<br>DE VUELTA</h2>
+        <button class="continue" data-go="proyecto">continuar último trabajo <span aria-hidden="true">▶</span></button>
+      </div>
+    </div>
+    <div class="wrap">
+      <h2 class="section-title">Todos los proyectos</h2>
+      <div class="cards" id="cards"></div>
+      <p class="cards-note">Los demás proyectos están en desarrollo.</p>
+    </div>
+  </section>
+
+  <section class="screen wrap" id="s-progreso" hidden>
+    <div class="progress-layout">
+      <div>
+        <h1 class="page-head">Proyectos</h1>
+
+        <div class="proj-row">
+          <p class="proj-label"><b>Escape from Chavin</b> <span>3/6 Módulos completados</span></p>
+          <div class="track">
+            <i class="node on"></i><i class="node on"></i><i class="node on"></i>
+            <i class="node"></i><i class="node"></i><i class="node"></i>
+          </div>
+        </div>
+
+        <div class="proj-row">
+          <p class="proj-label"><b>Proyecto 2</b> <span>3/5 Módulos completados</span></p>
+          <div class="track">
+            <i class="node on"></i><i class="node on"></i><i class="node on"></i>
+            <i class="node"></i><i class="node"></i>
+          </div>
+        </div>
+
+        <div class="stats">
+          <h2 class="page-head">Estadística</h2>
+          <div class="stat-line">
+            <span>Horas de estudio al día</span><b>1 h 40 min</b>
+            <span class="bar"><i style="width:56%"></i></span>
+          </div>
+          <div class="stat-line">
+            <span>Tiempo por sesión</span><b>38 min</b>
+            <span class="bar"><i style="width:42%"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <button class="side-current" data-go="proyecto">
+          <img src="imgs/scapefronchavin.png" alt="Escape from Chavin">
+          <span>Proyecto actual</span>
+        </button>
+        <div class="locked">Se desbloquea en el nivel 5</div>
+        <p class="locked-note">¡Crea tu propio proyecto y trabaja con amigos!</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="screen" id="s-proyecto" hidden>
+    <div class="proj-header">
+      <div class="proj-sprite"><img id="proj-cover" src="imgs/scapefronchavin.png" alt=""></div>
+      <div class="proj-headtext">
+        <h1><span id="proj-title">Escape from Chavin</span> <span class="tasks" id="proj-tasks">10/54 tareas completadas</span></h1>
+        <p class="sub" id="proj-sub">Nivel 2 - 6 módulos</p>
+      </div>
+    </div>
+    <div class="proj-layout">
+      <div class="modules" id="modules">
+        <button class="mod back" data-go="home">◀ Volver a proyectos</button>
+      </div>
+      <div class="mod-body">
+        <div class="mod-main">
+          <p class="mod-kicker" id="mod-kicker">Primer módulo</p>
+          <h2 id="mod-title">Escape from Chavin</h2>
+          <div id="mod-content"></div>
+        </div>
+        <figure class="mod-shot"><img id="mod-shot-img" src="imgs/scapefronchavin.png" alt=""></figure>
+        <div class="mod-foot">
+          <strong id="mod-foot-1">Bienvenido al proyecto de videojuego de Escape from Chavin</strong>
+          <span id="mod-foot-2">Haz click en el primer módulo para comenzar</span>
+          <div id="mod-cta"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen wrap" id="s-login" hidden>
+    <button class="backtab" data-go="landing">Volver al Inicio <span class="arw" aria-hidden="true">◀</span></button>
+    <div class="auth-head">
+      <span class="avatar" aria-hidden="true"></span>
+      <h1>Inicia Sesión</h1>
+    </div>
+    <form class="auth-form" id="form-login">
+      <label for="login-user">Usuario</label>
+      <input id="login-user" name="usuario" type="text" autocomplete="username" placeholder="Usuario276">
+      <label for="login-pass">Contraseña</label>
+      <input id="login-pass" name="clave" type="password" autocomplete="current-password" placeholder="••••••••">
+      <button class="pill" type="submit">Entrar</button>
+      <p class="auth-alt">¿Todavía no tienes cuenta? <button type="button" data-go="registro">Regístrate</button></p>
+    </form>
+    <p class="auth-note">Prototipo de navegación: no hay cuentas reales ni datos guardados. Cualquier valor entra.</p>
+  </section>
+
+  <section class="screen wrap" id="s-registro" hidden>
+    <button class="backtab" data-go="landing">Volver al Inicio <span class="arw" aria-hidden="true">◀</span></button>
+    <div class="auth-head">
+      <span class="avatar" aria-hidden="true"></span>
+      <h1>Regístrate</h1>
+    </div>
+    <form class="auth-form" id="form-registro">
+      <label for="reg-user">Usuario</label>
+      <input id="reg-user" name="usuario" type="text" autocomplete="username" placeholder="Usuario276">
+      <label for="reg-mail">Correo</label>
+      <input id="reg-mail" name="correo" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+      <label for="reg-pass">Contraseña</label>
+      <input id="reg-pass" name="clave" type="password" autocomplete="new-password" placeholder="••••••••">
+      <button class="pill" type="submit">Crear cuenta</button>
+      <p class="auth-alt">¿Ya tienes cuenta? <button type="button" data-go="login">Inicia sesión</button></p>
+    </form>
+    <p class="auth-note">Prototipo de navegación: no hay cuentas reales ni datos guardados. Cualquier valor entra.</p>
+  </section>
+
+  <section class="screen wrap" id="s-perfil" hidden>
+    <button class="backtab" data-go="home">Volver al inicio <span class="arw" aria-hidden="true">◀</span></button>
+    <div class="auth-head">
+      <span class="avatar" aria-hidden="true"></span>
+      <h1 id="perfil-name">Usuario276</h1>
+    </div>
+    <p class="bio">Hola! Estoy estudiando en Aprende Unity.</p>
+
+    <div class="profile-stats">
+      <div class="edit-row"><button type="button" id="btn-editar">Editar</button></div>
+      <div class="pstat"><span>Nivel</span><b>1</b></div>
+      <div class="pstat"><span>Proyectos terminados</span><b>1</b></div>
+      <div class="pstat"><span>Respuestas en foro</span><b>3</b></div>
+      <div class="pstat"><span>Porcentaje de respuesta acertada</span><b>80%</b></div>
+      <div class="pstat"><span>Medallas</span><b>2</b></div>
+    </div>
+
+    <div class="profile-projects">
+      <button type="button" data-go="proyecto">Proyecto actual <em>Escape from Chavin · 10/54 tareas</em></button>
+      <div class="pp-off">Proyecto secundario <em>Snake · en desarrollo</em></div>
+    </div>
+
+    <p class="auth-note logout">
+      <button type="button" id="btn-salir">Cerrar sesión</button>
+    </p>
+  </section>
+
+</main>
+
+<div class="proto-tag">Prototipo</div>
+
+<script src="app.js"></script>
+</body>
+</html>

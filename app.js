@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var IMG_SNAKE = "imgs/snake.png";
+  var IMG_SNAKE = "imgs/snakeoriginal.png";
   var IMG_WIP = "imgs/WIP_allmode.png";
 
   var PROJECTS = [
@@ -57,7 +57,7 @@
     {
       name: "Módulo Arte:",
       title: "Snake Game",
-      img: "imgs/image_6.png",
+      img: "imgs/snakegrande.png",
       blocks: [
         { h: "3. Diseño artístico:" },
         { p: "El apartado artístico se encarga de definir la apariencia visual de Snake Game. Esto incluye el diseño de la serpiente, los alimentos, el escenario y los elementos de la interfaz." },
@@ -191,7 +191,7 @@
         { link: {
           text: "El enlace del Snake Game:",
           label: "Jugar Snake Game ▶",
-          url: "https://www.google.com/search?q=snake+game&ie=UTF-8"
+          url: "https://playsnake.org/"
         } }
       ]
     }
